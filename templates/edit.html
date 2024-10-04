@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6dd5ed, #1fe509);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: backgroundAnimation 15s ease infinite;
+        }
+    
+    
+    
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+    
+        form:hover {
+            transform: scale(1.02);
+        }
+    
+        h1 {
+            position: absolute;
+            color: #333;
+            top: 10%;
+        }
+    
+        label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+    
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+    
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <h1>Edit User</h1>
+    <form method="POST">
+        <label>First Name</label>
+        <input type="text" name="first_name" value="{{ user.first_name }}"><br>
+        <label>Last Name</label>
+        <input type="text" name="last_name" value="{{ user.last_name }}"><br>
+        <label>Phone</label>
+        <input type="text" name="phone" value="{{ user.phone }}"><br>
+        <label>Email</label>
+        <input type="email" name="email" value="{{ user.email }}"><br>
+        <label>Address</label>
+        <input type="text" name="address" value="{{ user.address }}"><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
